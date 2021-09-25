@@ -1,0 +1,114 @@
+ <div class="container" style="margin: auto;
+width: 100%;
+border:2px solid black;
+padding: 50px;">
+<div style="text-align: left;margin-top: 20;margin-left: 30%;">
+  <a [routerLink]="['/signout']" >Signout</a><router-outlet></router-outlet> 
+</div>
+
+
+
+
+
+
+
+<div class="container">
+  <form #StudentForm="ngForm" (ngSubmit)="onSubmit(StudentForm)"> 
+   <!-- <form #frm="ngForm"> -->
+    
+
+      <div class="from-group">
+        <div class="list-header-title" style="text-align:left;color:lightseagreen">
+        <h1>Student Form:</h1></div>
+
+          <h4>Name:</h4>
+          <input type="text" class="form-control" #nm="ngModel" [(ngModel)]="currentUser.username" name="Name" disabled  required minlength="5" maxlength="15">
+          <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+              <div *ngIf="nm.errors?.required">Full name is required</div>
+              <div *ngIf="nm.errors?.minlength">Name should be minimum of 5 letter</div>
+                
+              </div>
+              </div>
+              <br> 
+              
+              
+              <div class="from-group">
+
+                  <h4>Email:</h4>
+                  <input type="email" class="form-control" #email="ngModel" [(ngModel)]="currentUser.Email" disabled name="Email" required>
+                  <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+                      <div *ngIf="email.errors?.required">Email is required</div>
+                      <!-- <div *ngIf="email.errors?.pattern">Email must be a valid email address</div> -->
+                      
+                      </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                      
+                        <h4>Student Fees:</h4>
+                        <select id="branch" name="branch" ngModel class="form-control">
+                          <option value="1">Java-50000</option>
+                          <option value="2">Angular-25000</option>
+                          <option value="3">Python-750000</option>
+                          <option value="4">SQL-40000</option>
+                        </select>
+                      </div>  
+                         <br> 
+                         <div class="form-group">
+                          <div class="form-control">
+                            <label class="checkbox-inline">
+                              <input type="checkbox" name="isAccept" ngModel>Installment
+                              <input type="checkbox" name="isAccept" ngModel>One time Paid
+                      
+                            </label>
+                          </div>
+                        </div>
+                    
+                         <br>
+                         <div class="form-group">
+                          <h4>Gender:</h4>
+                          <div class="form-control">
+                            <label class="radio-inline">
+                              <input type="radio" name="gender" value="male" ngModel>
+                              Male
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="gender" value="female" ngModel>
+                              Female
+                            </label>
+                          </div>
+                        </div>
+                         <br>
+                         
+                         
+                            <div class="from-group">
+
+                              
+                              <h4>Student Qualification:</h4>
+                        
+                              <select id="branch" name="branch" ngModel class="form-control">
+                                <option value="1">B.E</option>
+                                <option value="2">BCA</option>
+                                <option value="3">M.E</option>
+                                <option value="4">MCA</option>
+                              </select>
+                            <br>
+                            <br>
+                                  
+                                  <div class="from-group"> 
+                                      <h4>Mobile:</h4>
+                                      <input type="text" class="form-control" ngModel name="mobile">
+                                      </div>
+                                       <br>
+                                      
+                                      <div class="panel-footer">
+                                        <!-- <button onclick()class="btn btn-primary" type="submit">Submit</button> -->
+                                        
+                                        <button  type="submit">Submit</button>
+                                      </div>
+                                    
+                                      
+                                       <!-- <input type="submit" class="btn btn-default" value="submit" [disabled]="frm.invalid">       </form> -->
+                                   
+        </div>
+        </form> 

@@ -1,0 +1,115 @@
+
+ 
+
+<!-- <div class="container " style="margin: auto;
+width: 70%;
+padding: 70px;">
+<div style="text-align: left;margin-top: 20;margin-left: 100%;">
+    <a [routerLink]="['/signout']" >Signout</a><router-outlet></router-outlet> 
+  </div>
+<h1 style="text-align: center;">Fees Summary</h1>
+<table border="3" >
+  <th>UserName</th>
+    <th>Action</th>
+  <tr *ngFor="let fees of feesinfo;let i=index">
+     <td>{{fees.username}}</td> 
+    <td>{{fees.status}}</td> 
+    <td><a class="btn btn-success" (click)="approval(i)" >Fees Completed</a>&nbsp;
+      <a class="btn btn-danger" (click)="notApproval(i)" >Fees Not Completed</a></td>
+    
+  </tr>
+
+</table>
+</div> 
+
+ -->
+
+
+
+
+
+ 
+<div class="container">
+  <form class="form-horizontal">
+
+   <div class="form-group">
+
+       <label class="control-label col-sm-2" for="Name">Name</label>
+       <div class="col-sm-5">
+         <input type="text" class="from-control" id="name" name="name" [(ngModel)]="model.name" placeholder="Enter Name">
+
+
+       </div>
+   </div>
+   <div class="form-group">
+
+       <label class="control-label col-sm-2" for="status">Status</label>
+       <div class="col-sm-5">
+         <input type="text" class="from-control" id="status" name="position" [(ngModel)]="model.status" placeholder="Enter status">
+
+       </div>
+   </div>
+   <div class="form-group">
+       <div class="col-sm-offset-2 col-sm-10">
+           <button type="submit" class="btn btn-primary" (click)="addstudent()">Save</button>
+       </div>
+   </div>
+
+   <h2>Display Data</h2>
+   <table class="table table-bordered">
+     <thead>
+         <tr>
+             <th width="400">Name</th>
+             <th item-width="400">Status</th>
+             <th item-width="200">Action</th>
+         </tr>
+     </thead>
+     <tbody>
+       <ng-container *ngFor="let s of student; let i=index">
+           <tr *ngIf="s">
+               <td>{{s.name}}</td>
+               <td>{{s.status}}</td>
+           <td>
+               <a class="btn btn-success" (click)="edit(i)">Edit</a>
+               <a class="btn btn-danger"   (click)="delete(i)">Delete</a>
+           </td>
+           </tr>
+
+
+       </ng-container>
+     </tbody>
+   </table>
+
+   <h2>Update Data</h2>
+   <form class="form-horizontal">
+       <div class="form-group">
+           <label class="control-label col-sm-2" for="name">Name</label>
+           <div class="col-sm-10">
+
+
+               <input type="text" class="from-control" id="name" name="name" [(ngModel)]="model2.name" placeholder="Enter name">
+           </div>
+
+       </div>
+     
+
+       <div class="form-group">
+           <label class="control-label col-sm-2" for="status">Status</label>
+           <div class="col-sm-10">
+
+
+               <input type="text" class="from-control" id="status" name="status" [(ngModel)]="model2.status" placeholder="Enter Status">
+           </div>
+
+       </div>
+     <div class="form-group">
+       <div class="col-sm-offset-2 col-sm-10">
+           <button type="submit" class="btn btn-default" (click)="updateStudent()">Update</button>
+       </div>
+   
+
+     </div>
+
+  </form>
+</form>
+</div>
