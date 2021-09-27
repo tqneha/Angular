@@ -20,11 +20,12 @@ export class StudentApplyFeesComponent implements OnInit {
 
      
      localStorage.setItem('stud_admission_info',JSON.stringify(stud_admission_info_arr))
-     this.r.navigate(['FeesHistory'])
+     this.r.navigate(['feeshistory'])
     } 
     onsave(studentFormm:any){
       console.log(studentFormm.value)
       this.stud_admission_info=JSON.parse(localStorage.getItem('stud_admission_info')||'[]')
+      this.stud_admission_info.push(studentFormm.value)
       localStorage.setItem('stud_admission_info',JSON.stringify(this.stud_admission_info))
     }
      currentUser:any={}
@@ -36,8 +37,9 @@ export class StudentApplyFeesComponent implements OnInit {
   
  
    constructor(private r:Router) {
-    this.r.navigate(['FeesHistory']);
+    // this.r.navigate(['feeshistory']);
   
+    
      this.currentUser=JSON.parse(localStorage.getItem('currentuser')||'{}');
      console.log(this.currentUser)
     }

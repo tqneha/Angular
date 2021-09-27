@@ -11,7 +11,7 @@ export class FeesHistoryComponent implements OnInit {
   constructor(private r:Router) { 
 
     //  localStorage.setItem('FeesHistory',JSON.stringify('{}'))
-    this.r.navigate(['feesHistory']);
+    // this.r.navigate(['feeshistory']);
   
   
     }

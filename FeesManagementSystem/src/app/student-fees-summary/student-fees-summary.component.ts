@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-fees-summary.component.css']
 })
 export class StudentFeesSummaryComponent implements OnInit {
+//   model:any={};
+//   model2:any={};
 //   feesinfo: any[] = [];
-//   isApprove=true;
+//   student:any[]=[];
+//    isApprove=true;
 //    constructor() { }
  
 //    ngOnInit() {
-//      this.feesinfo=JSON.parse(localStorage.getItem("applayData")||'[]');
+//      this.feesinfo=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
 //    }
  
  
@@ -22,8 +25,8 @@ export class StudentFeesSummaryComponent implements OnInit {
 //           if(j==i)
 //           {
 //               this.feesinfo[j].status="paid Fees";
-//               localStorage.setItem("applayData",JSON.stringify(this.feesinfo));
-//               this.feesinfo=JSON.parse(localStorage.getItem("applayData")||'[]');
+//               localStorage.setItem("stud_admission_info",JSON.stringify(this.feesinfo));
+//               this.feesinfo=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
 //           }
 //         }
 //    }
@@ -36,8 +39,8 @@ export class StudentFeesSummaryComponent implements OnInit {
 //        if(j==i)
 //        {
 //            this.feesinfo[j].status="Not Fees Paid";
-//            localStorage.setItem("applayData",JSON.stringify(this.feesinfo));
-//            this.feesinfo=JSON.parse(localStorage.getItem("applayData")||'[]');
+//            localStorage.setItem("stud_admission_info",JSON.stringify(this.feesinfo));
+//            this.feesinfo=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
 //        }
 //      }
  
@@ -50,31 +53,31 @@ export class StudentFeesSummaryComponent implements OnInit {
 
 
 
-model:any={};
-model2:any={};
-myvalue:any;
-student:any[]=[];
+ model:any={};
+ model2:any={};
+ myvalue:any;
+ student:any[]=[];
  constructor() { }
 
  ngOnInit() {
-   this.student=JSON.parse(localStorage.getItem("info")||'[]');
+   this.student=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
  }
  addstudent()
  {
-   let student=JSON.parse(localStorage.getItem("info")||'[]');
+   let student=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
    if(student==null)
    {
      student=[];
    }
    student.push(this.model);
-   localStorage.setItem("info",JSON.stringify(student));
-   this.student=JSON.parse(localStorage.getItem("info")||'[]');
+   localStorage.setItem("stud_admission_info",JSON.stringify(student));
+   this.student=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
    this.model={};
  }
  delete(i:any)
  {
     this.student.splice(i,1);
-    localStorage.setItem("info",JSON.stringify(this.student));
+    localStorage.setItem("stud_admission_info",JSON.stringify(this.student));
  }
 
 
@@ -92,14 +95,14 @@ updateStudent()
       if(i==k)
       {
           this.student[i]=this.model2;
-          localStorage.setItem("info",JSON.stringify(this.student));
-          this.student=JSON.parse(localStorage.getItem("info")||'[]');
+          localStorage.setItem("stud_admission_info",JSON.stringify(this.student));
+          this.student=JSON.parse(localStorage.getItem("stud_admission_info")||'[]');
           this.model2={}; 
       }
   }
 
 }
-
 }
+ 
 
 
