@@ -1,1 +1,25 @@
-<p>fees-history works!</p>
+<h1>Welcome {{current_user.username}}</h1>
+
+
+<table>
+    <thead>
+<tr>
+
+    <th>sr no</th>
+    <th>Course Name</th>
+    <th>Total Fees</th>
+    <th>Fees Paid </th>
+    <th>Balance Fees</th>
+</tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of AsmissionInfo;index as i">
+            <td>{{i}} </td>
+            
+
+            
+        </tr>
+    </tbody>
+
+</table>

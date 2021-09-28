@@ -16,18 +16,14 @@ export class StudentApplyFeesComponent implements OnInit {
      console.log("i am invoked ")
      console.log(contactForm.value);
      var stud_admission_info_arr=JSON.parse(localStorage.getItem('stud_admission_info')||'[]');
-     stud_admission_info_arr.push(contactForm.value)
+     stud_admission_info_arr.push({username:this.currentUser.username,userPassword:this.currentUser.userPassword
+      ,...contactForm.value})
 
      
      localStorage.setItem('stud_admission_info',JSON.stringify(stud_admission_info_arr))
      this.r.navigate(['feeshistory'])
     } 
-    onsave(studentFormm:any){
-      console.log(studentFormm.value)
-      this.stud_admission_info=JSON.parse(localStorage.getItem('stud_admission_info')||'[]')
-      this.stud_admission_info.push(studentFormm.value)
-      localStorage.setItem('stud_admission_info',JSON.stringify(this.stud_admission_info))
-    }
+   
      currentUser:any={}
 //  
     stud_admission_info:any={

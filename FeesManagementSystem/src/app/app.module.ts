@@ -23,7 +23,8 @@ const appRoutes:Routes=[
   {path:"applyfees",component:StudentApplyFeesComponent},
   {path:"Summary",component:StudentFeesSummaryComponent},
   {path:"signout",component:SignoutComponent},
-  {path:"feeshistory",component:FeesHistoryComponent}
+  {path:"feeshistory",component:FeesHistoryComponent},
+  {path:'history',component:FeesHistoryComponent}
 
  
   

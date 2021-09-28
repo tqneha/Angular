@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FeesManagementSystem';
+  currentuser=''
+  constructor(){
+   this.currentuser= JSON.parse(localStorage.getItem("currentuser")||'{}');
+  }
 }
